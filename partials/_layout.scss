@@ -1,0 +1,305 @@
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+.bg-home {
+  position: relative;
+}
+
+.bg-home::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-image: linear-gradient(
+      to bottom,
+      rgba(236, 243, 249, 0.1),
+      #06121e
+    ),
+    url("../assets/bg.svg");
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 0;
+  opacity: 0.9;
+}
+
+//Hero
+.hero {
+  color: $white-normal;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+
+  h1 {
+    text-align: center;
+    line-height: 150%;
+    max-width: 940px;
+    font-size: 48px;
+  }
+
+  p {
+    text-align: center;
+    margin: 14px 0;
+  }
+}
+
+.button-contact {
+  padding: 16px 24px;
+  color: $white-normal;
+  background-color: $red-normal;
+  border-radius: 4px;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 16px 0;
+}
+
+.button-contact:hover {
+  animation: scaleButton 0.8s infinite alternate;
+}
+
+@keyframes scaleButton {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+//Para dispositivos móveis
+@media (max-width: 768px) {
+  .hero {
+    min-height: 60vh;
+
+    h1 {
+      font-size: 32px;
+      padding: 0 16px;
+      width: 100%;
+    }
+
+    p {
+      font-size: 16px;
+    }
+  }
+}
+
+//Para dispositivos menores (Ex: iPhone SE)
+@media screen and (max-width: 480px) {
+  .hero h1 {
+    font-size: 24px;
+  }
+}
+
+//About
+.about {
+  background-color: $primary-normal;
+  overflow: hidden;
+  color: $white-normal;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 32px 16px 64px 16px;
+  img {
+    max-width: 570px;
+  }
+}
+
+.about-content div {
+  flex: 1;
+}
+
+.about-description {
+  h2 {
+    font-size: 32px;
+    margin-bottom: 24px;
+  }
+
+  p {
+    margin-bottom: 16px;
+    line-height: 150%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+  }
+}
+
+//Services
+.services {
+  background-color: $white-normal;
+  color: $black-normal;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 16px;
+}
+
+.services-content h2 {
+  text-transform: uppercase;
+  font-size: 32px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.services-content p {
+  margin-bottom: 16px;
+  line-height: 150%;
+  text-align: center;
+  max-width: 780px;
+}
+
+.haircuts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 0 40px 32px 40px;
+}
+
+.haircut {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: $white-normal;
+  border-radius: 8px;
+  box-shadow: 0px -1px 16px -4px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    max-width: 354px;
+    transition: transform 0.2s;
+  }
+}
+
+.haircut img:hover {
+  transform: scale(1.2);
+  z-index: 1;
+}
+
+.haircut-info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+  background-color: $white-normal;
+  z-index: 2;
+}
+
+.haircut-info button {
+  padding: 4px 8px;
+  color: $white-normal;
+  background-color: $red-normal;
+  border-radius: 4px;
+  border: 0;
+  font-weight: 600;
+  cursor: default;
+}
+
+@media screen and (max-width: 768px) {
+  .haircuts {
+    flex-direction: column;
+  }
+
+  .haircut img {
+    max-width: 740px;
+  }
+}
+
+//Footer
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  background-color: $primary-normal;
+  color: $white-normal;
+  gap: 16px;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 14px;
+  a:hover i {
+    animation: translateY 0.8s infinite alternate;
+    color: $red-light;
+  }
+}
+
+//Botão WhatsApp
+.button-whatsapp {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 99;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $white-normal;
+  text-decoration: none;
+
+  img {
+    max-width: 74px;
+    transition: transform 0.2s;
+  }
+
+  img:hover {
+    transform: scale(1.1);
+  }
+}
+
+.button-whatsapp .button-whatsapp-text {
+  position: absolute;
+  visibility: hidden;
+  width: 120px;
+  top: 16px;
+  left: -144px;
+  padding: 4px;
+  border-radius: 4px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.4s;
+  font-size: 14px;
+  background-color: $black-normal;
+  color: $white-normal;
+}
+
+.button-whatsapp:hover .button-whatsapp-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media screen and (max-width: 768px) {
+  .button-whatsapp {
+    img {
+      max-width: 56px;
+    }
+  }
+  .button-whatsapp .button-whatsapp-text {
+    width: 100px;
+    top: 8px;
+    left: -124px;
+    font-size: 12px;
+  }
+  .haircut img {
+    max-width: 740px;
+  }
+}
